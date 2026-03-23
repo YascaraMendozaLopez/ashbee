@@ -1,0 +1,22 @@
+---
+import { SERVICES } from '../../data/spa';
+---
+<section id="servicios" class="py-24 bg-white px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-serif text-4xl text-ashbee-dark mb-4">Nuestros Servicios</h2>
+      <div class="w-20 h-1 bg-ashbee-primary mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      {SERVICES.map((service) => (
+        <div class="group p-8 border border-ashbee-secondary hover:border-ashbee-primary transition-all duration-500 hover:shadow-xl hover:-translate-y-2 rounded-xl text-center">
+          <div class="mb-4 text-ashbee-primary group-hover:scale-110 transition-transform duration-300">
+             <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          </div>
+          <h3 class="font-sans text-sm font-semibold uppercase tracking-wider text-ashbee-dark">{service}</h3>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

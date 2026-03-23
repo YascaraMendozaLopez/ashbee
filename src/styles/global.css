@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ashbee-primary: #bfa37e;
+  --color-ashbee-secondary: #fdfbf7;
+  --color-ashbee-accent: #4a5d4e;
+  --color-ashbee-dark: #1a1a1a; 
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  --keyframes-fade-in-up: {
+    0% { 
+      opacity: 0; 
+      transform: translateY(40px); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  };
+
+  --animation-fade-in-up: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@layer base {
+  body {
+    @apply bg-ashbee-secondary text-ashbee-dark antialiased;
+  }
+}

@@ -1,0 +1,23 @@
+---
+import { PACKS } from '../../data/spa';
+---
+<section id="packs" class="py-24 bg-ashbee-secondary px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-serif text-4xl text-ashbee-dark mb-4">Packs Exclusivos</h2>
+      <p class="font-light italic text-ashbee-primary">Diseñados para resultados integrales</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {PACKS.map((pack) => (
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-ashbee-primary/30 transition-all duration-300 group">
+          <h3 class="font-serif text-2xl text-ashbee-dark mb-3 group-hover:text-ashbee-primary transition-colors">{pack.name}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">{pack.desc}</p>
+          <button class="text-xs font-bold uppercase tracking-widest text-ashbee-primary border-b border-ashbee-primary pb-1 hover:text-ashbee-dark hover:border-ashbee-dark transition-all">
+            Consultar Pack
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

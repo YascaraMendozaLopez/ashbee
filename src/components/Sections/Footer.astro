@@ -1,0 +1,28 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="bg-white border-t border-ashbee-secondary py-12 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+      <div class="text-center md:text-left">
+        <h2 class="font-serif text-2xl tracking-widest text-ashbee-dark mb-2">ASHBEE</h2>
+        <p class="text-gray-400 text-sm italic font-light">Estética Avanzada & Post-Operatorios</p>
+      </div>
+      
+      <div class="flex gap-8 text-sm uppercase tracking-widest text-ashbee-dark">
+        <a href="https://instagram.com" target="_blank" class="hover:text-ashbee-primary transition-colors">Instagram</a>
+        <a href="https://facebook.com" target="_blank" class="hover:text-ashbee-primary transition-colors">Facebook</a>
+        <a href="https://tiktok.com" target="_blank" class="hover:text-ashbee-primary transition-colors">TikTok</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center border-t border-ashbee-secondary pt-8 text-xs text-gray-400 gap-4">
+      <p>&copy; {currentYear} ASHBEE Spa. Todos los derechos reservados.</p>
+      <div class="flex gap-6 uppercase tracking-tighter">
+        <span>Hecho con elegancia</span>
+        <span class="text-ashbee-primary">•</span>
+        <span>Bolivia</span>
+      </div>
+    </div>
+  </div>
+</footer>
