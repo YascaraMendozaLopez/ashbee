@@ -5,7 +5,9 @@ import { PACKS } from '../../data/spa';
 <section id="packs" class="py-24 bg-ashbee-secondary overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
     <div>
-      <h2 class="font-serif text-4xl md:text-5xl text-ashbee-dark mb-4">Packs Exclusivos</h2>
+      <h2 class="font-serif text-4xl md:text-5xl text-ashbee-dark mb-4">
+        Packs Exclusivos
+      </h2>
       <p class="font-sans font-light italic text-ashbee-primary tracking-wide text-lg">
         Diseñados para resultados integrales
       </p>
@@ -13,29 +15,71 @@ import { PACKS } from '../../data/spa';
 
     <div class="hidden md:flex gap-4">
       <button id="embla-prev" class="w-12 h-12 rounded-full border border-ashbee-primary/20 flex items-center justify-center text-ashbee-primary hover:bg-ashbee-primary hover:text-white transition-all cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
       </button>
       <button id="embla-next" class="w-12 h-12 rounded-full border border-ashbee-primary/20 flex items-center justify-center text-ashbee-primary hover:bg-ashbee-primary hover:text-white transition-all cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-9-6"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-9-6"/>
+        </svg>
       </button>
     </div>
   </div>
 
   <div class="embla overflow-hidden cursor-grab active:cursor-grabbing px-[max(1.5rem,calc((100vw-1280px)/2))] py-1 select-none touch-pan-y">
     <div class="embla__container flex gap-6">
+      
       {PACKS.map((pack) => (
         <div class="embla__slide flex-none w-[85vw] md:w-[400px]">
-          <div class="h-full bg-white p-10 rounded-[2rem] shadow-sm border border-ashbee-primary/5 hover:border-ashbee-primary/40 transition-all duration-500 group flex flex-col justify-between italic">
-            <div>
-              <h3 class="font-serif text-3xl text-ashbee-dark mb-4 group-hover:text-ashbee-primary transition-colors italic">{pack.name}</h3>
-              <p class="text-ashbee-dark/60 text-sm leading-relaxed mb-8 font-light line-clamp-4">{pack.desc}</p>
+          
+          <div class="h-full bg-white rounded-[2rem] shadow-sm border border-ashbee-primary/5 hover:border-ashbee-primary/40 transition-all duration-500 group overflow-hidden flex flex-col">
+
+            {/* Imagen estilo premium */}
+            <div class="relative h-56 overflow-hidden">
+              
+              <div 
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style={`background-image: url(${pack.image})`}
+              ></div>
+
+              {/* overlay oscuro */}
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all"></div>
+
+              {/* gradient elegante */}
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+
+              {/* etiqueta opcional */}
+              <div class="absolute bottom-4 left-6">
+                <span class="text-white text-xs tracking-widest uppercase opacity-80">
+                  Experiencia
+                </span>
+              </div>
+
             </div>
-            <button class="text-xs font-bold uppercase tracking-widest text-ashbee-primary border-b border-ashbee-primary/30 pb-1 self-start hover:border-ashbee-primary transition-all">
-              Consultar Pack
-            </button>
+
+            {/* Contenido */}
+            <div class="p-8 flex flex-col justify-between flex-1 italic">
+              <div>
+                <h3 class="font-serif text-2xl text-ashbee-dark mb-3 group-hover:text-ashbee-primary transition-colors">
+                  {pack.name}
+                </h3>
+
+                <p class="text-ashbee-dark/60 text-sm leading-relaxed mb-6 font-light line-clamp-3">
+                  {pack.desc}
+                </p>
+              </div>
+
+              <button class="text-xs font-bold uppercase tracking-widest text-ashbee-primary border-b border-ashbee-primary/30 pb-1 self-start hover:border-ashbee-primary transition-all">
+                Consultar Pack
+              </button>
+            </div>
+
           </div>
+
         </div>
       ))}
+
     </div>
   </div>
 </section>
